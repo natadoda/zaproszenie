@@ -1,0 +1,139 @@
+```html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaproszenie</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    text-align:center;
+    max-width:600px;
+    width:90%;
+}
+
+input{
+    padding:12px;
+    width:250px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:#ff5f7e;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-left:8px;
+}
+
+button:hover{
+    background:#ff3d64;
+}
+
+#invite{
+    display:none;
+}
+
+h1{
+    color:#ff3d64;
+}
+
+.date{
+    font-size:20px;
+    margin:20px 0;
+}
+
+.error{
+    color:red;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div id="login">
+        <h2>🔒 Prywatne zaproszenie</h2>
+        <p>Wpisz hasło, aby zobaczyć treść.</p>
+
+        <input type="password" id="password" placeholder="Hasło">
+        <button onclick="checkPassword()">Otwórz</button>
+
+        <div class="error" id="error"></div>
+    </div>
+
+    <div id="invite">
+        <h1>🎉 Moje 30. Urodziny 🎉</h1>
+
+        <p>
+            Mam ogromną przyjemność zaprosić Cię na świętowanie
+            moich trzydziestych urodzin!
+        </p>
+
+        <div class="date">
+            📅 15 sierpnia 2026<br>
+            🕖 19:00
+        </div>
+
+        <p>
+            📍 Restauracja XYZ<br>
+            ul. Przykładowa 10, Poznań
+        </p>
+
+        <p>
+            Będzie jedzenie, muzyka, tańce i świetne towarzystwo.
+            Mam nadzieję, że będziesz ze mną tego wieczoru!
+        </p>
+
+        <h3>Do zobaczenia! ❤️</h3>
+    </div>
+
+</div>
+
+<script>
+const secretPassword = "MOJEHASLO2026";
+
+function checkPassword() {
+    const entered = document.getElementById("password").value;
+
+    if (entered === secretPassword) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("invite").style.display = "block";
+    } else {
+        document.getElementById("error").innerText =
+            "Nieprawidłowe hasło.";
+    }
+}
+
+document.getElementById("password").addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        checkPassword();
+    }
+});
+</script>
+
+</body>
+</html>
+```
