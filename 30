@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zaproszenie</title>
+<title>30 lat minęło 🎉</title>
 
 <style>
 body{
@@ -15,6 +14,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    padding:30px 0;
+    box-sizing:border-box;
 }
 
 .card{
@@ -22,14 +23,19 @@ body{
     padding:40px;
     border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,.15);
-    text-align:center;
-    max-width:600px;
+    max-width:700px;
     width:90%;
+    box-sizing:border-box;
+}
+
+#login{
+    text-align:center;
 }
 
 input{
     padding:12px;
     width:250px;
+    max-width:80%;
     border:1px solid #ddd;
     border-radius:8px;
     font-size:16px;
@@ -56,16 +62,78 @@ button:hover{
 
 h1{
     color:#ff3d64;
+    text-align:center;
+    margin-top:0;
+}
+
+h2{
+    color:#ff3d64;
+}
+
+h3{
+    color:#ff5f7e;
+    margin-top:30px;
 }
 
 .date{
-    font-size:20px;
-    margin:20px 0;
+    font-size:18px;
+    margin:25px 0;
+    line-height:1.8;
+    background:#fff5f7;
+    padding:15px;
+    border-radius:12px;
+}
+
+.day{
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid #eee;
+}
+
+.event{
+    margin:15px 0;
+    line-height:1.6;
 }
 
 .error{
     color:red;
     margin-top:10px;
+}
+
+.highlight{
+    background:#fff0f3;
+    padding:15px;
+    border-radius:12px;
+    margin-top:25px;
+    line-height:1.6;
+}
+
+.footer{
+    text-align:center;
+    font-size:20px;
+    margin-top:30px;
+}
+
+@media (max-width:600px){
+    .card{
+        padding:25px 20px;
+    }
+
+    input{
+        width:100%;
+        max-width:100%;
+        box-sizing:border-box;
+        margin-bottom:10px;
+    }
+
+    button{
+        margin-left:0;
+        width:100%;
+    }
+
+    h1{
+        font-size:28px;
+    }
 }
 </style>
 </head>
@@ -76,7 +144,7 @@ h1{
 
     <div id="login">
         <h2>🔒 Prywatne zaproszenie</h2>
-        <p>Wpisz hasło, aby zobaczyć treść.</p>
+        <p>Wpisz hasło, aby zobaczyć treść zaproszenia.</p>
 
         <input type="password" id="password" placeholder="Hasło">
         <button onclick="checkPassword()">Otwórz</button>
@@ -85,35 +153,90 @@ h1{
     </div>
 
     <div id="invite">
-        <h1>🎉 Moje 30. Urodziny 🎉</h1>
+
+        <h1>🎉 30 LAT MINĘŁO 🎉</h1>
 
         <p>
-            Mam ogromną przyjemność zaprosić Cię na świętowanie
-            moich trzydziestych urodzin!
+            Z okazji moich 30stych urodzin serdecznie zapraszam Was
+            na wspólny obiad, podczas którego będziemy rozmawiać,
+            wspominać i oczywiście stołować się! ✨
         </p>
 
         <div class="date">
-            📅 15 sierpnia 2026<br>
-            🕖 19:00
+            📅 <strong>5 grudnia 2026</strong><br>
+            🕖 <strong>16:00</strong><br>
+            📍 <strong>Cukrownia Żnin</strong><br>
+            ul. Janickiego 1, 88-400 Żnin
         </div>
 
-        <p>
-            📍 Restauracja XYZ<br>
-            ul. Przykładowa 10, Poznań
+        <h2>🎉 Szczegółowy rozkład jazdy 🎉</h2>
+
+        <div class="day">
+            <h3>📅 Piątek, 4 grudnia</h3>
+
+            <div class="event">
+                Dla wszystkich, którzy mają czas i ochotę rozpocząć
+                świętowanie nieco wcześniej – zapraszam już od piątku.
+            </div>
+        </div>
+
+        <div class="day">
+            <h3>📅 Sobota, 5 grudnia</h3>
+
+            <div class="event">
+                🍽️ <strong>16:00 – wspólny obiad w Sali Tarasowej
+                (Restauracja Administracja)</strong>
+                <br><br>
+                Zapraszam Was na urodzinowy posiłek, podczas którego
+                oficjalnie rozpoczniemy świętowanie.
+            </div>
+
+            <div class="event">
+                🎳 <strong>Wieczorem</strong>
+                <br><br>
+                Czas na trochę rywalizacji – mini gry, kręgle i wszystko
+                to, co pozwoli nam stworzyć kolejne wspólne wspomnienia.
+                <br><br>
+                <em>
+                Dla mniejszych gości w hotelu znajduje się bawialnia.
+                </em>
+            </div>
+        </div>
+
+        <div class="day">
+            <h3>📅 Niedziela, 6 grudnia</h3>
+
+            <div class="event">
+                ☕ Od rana wspólne śniadanko, kawa dla potrzebujących
+                regeneracji i jeszcze chwila na rozmowy.
+            </div>
+        </div>
+
+        <div class="highlight">
+            🏨 <strong>Nocleg</strong>
+            <br><br>
+            Dla wszystkich, którzy chcieliby zarezerwować nocleg
+            w Cukrowni Żnin z 5 na 6 grudnia
+            (lub na obie noce 4–6.12) przygotowana jest zniżka
+            na hasło <strong>„natadoda30”</strong>.
+        </div>
+
+        <p class="footer">
+            Wasza obecność będzie dla mnie najlepszym prezentem. ❤️
+            <br>
+            <small>(czyt. nie kupujcie mi prezentów!)</small>
         </p>
 
-        <p>
-            Będzie jedzenie, muzyka, tańce i świetne towarzystwo.
-            Mam nadzieję, że będziesz ze mną tego wieczoru!
+        <p class="footer">
+            Do zobaczenia! ❤️
         </p>
 
-        <h3>Do zobaczenia! ❤️</h3>
     </div>
 
 </div>
 
 <script>
-const secretPassword = "MOJEHASLO2026";
+const secretPassword = "05121996";
 
 function checkPassword() {
     const entered = document.getElementById("password").value;
@@ -136,4 +259,3 @@ document.getElementById("password").addEventListener("keypress", function(e){
 
 </body>
 </html>
-```
